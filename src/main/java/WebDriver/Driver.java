@@ -17,22 +17,5 @@ public class Driver {
         driver.manage().window().maximize();
         return driver;
     }
-
-    public static WebElement waitElementVisibility(By locator) {
-        WebDriver driver = Driver.createDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    public static void waitElementVisibilityAndClick(By locator) {
-        WebDriver driver = Driver.createDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).click();
-    }
-
-    public static void waitElementVisibilityAndTypeText(By locator, String text) {
-        WebDriver driver = Driver.createDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
-    }
 }
+g
