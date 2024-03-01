@@ -3,9 +3,6 @@ package Lesson10;
 import WebDriver.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class OpenWindows {
     public static void main(String[] args) {
@@ -34,10 +31,7 @@ public class OpenWindows {
             System.out.println(pageUrl);
             if (pageTitle.contains("Zoo")) {
                 driver.close();
-                System.out.println("It's Zoooo!");
             }
         }
-
-
     }
 }

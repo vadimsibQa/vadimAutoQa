@@ -19,7 +19,6 @@ public class TwoElementsChecker {
         WebElement element1 = driver.findElement(By.xpath("//button[@type='submit']"));
         WebElement element2 = driver.findElement(By.xpath("//a[@href='/registration']"));
         TwoElementsChecker.compareElements(element1, element2);
-
     }
 
     public static void compareElements(WebElement element1, WebElement element2) {

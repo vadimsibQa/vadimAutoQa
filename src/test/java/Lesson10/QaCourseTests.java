@@ -41,7 +41,6 @@ public class QaCourseTests {
         driver.findElement(By.xpath("//h1[text()='Registration']")).click();
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
         // Test Case TU06
         driver.get("https://qa-course-01.andersenlab.com/login");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));

@@ -43,6 +43,7 @@ public class RepeatScenario {
             compareLink.click();
         }
 
+        // Fix compare button click issue
         Thread.sleep(3000);
 
         // move to Women page
@@ -74,6 +75,5 @@ public class RepeatScenario {
         }
 
         driver.findElement(By.xpath("//button[contains(@class, 'bt_compare')]")).click();
-
     }
 }
