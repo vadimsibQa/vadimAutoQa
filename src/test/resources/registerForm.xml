@@ -2,7 +2,7 @@
 <suite name="AllTests Suite">
     <test name="AllTests">
         <classes>
-            <class name="lesson11.priority.Priority1"/>
+            <class name="lesson12.registerForm.RegisterForm"/>
         </classes>
     </test>
 </suite>

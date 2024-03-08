@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<suite name="AllTests Suite" parallel="classes" thread-count="2">
-    <test name="AllTests">
-        <parameter name="user" value="user3"/>
-        <classes>
-            <class name="lesson11.parametersTask.ParametersTask"/>
-        </classes>
-    </test>
-</suite>
