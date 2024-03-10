@@ -27,6 +27,7 @@ public class CustomTestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        System.out.println("Test " + result.getMethod().getMethodName() + " failed.");
         makeScreenshot(result.getMethod().getMethodName());
     }
 }

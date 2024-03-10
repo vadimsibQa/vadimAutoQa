@@ -2,7 +2,7 @@
 <suite name="AllTests Suite">
     <test name="AllTests">
         <classes>
-            <class name="lesson12.actionsAndersenLab.ActionsAndersenLab"/>
+            <class name="qaCoursesPage.EditUserPageTest"/>
         </classes>
     </test>
 </suite>

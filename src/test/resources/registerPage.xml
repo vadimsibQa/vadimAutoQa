@@ -2,7 +2,7 @@
 <suite name="AllTests Suite">
     <test name="AllTests">
         <classes>
-            <class name="refactored12lesson.RepeatScenarioTest"/>
+            <class name="qaCoursesPage.RegisterPageTest"/>
         </classes>
     </test>
 </suite>
