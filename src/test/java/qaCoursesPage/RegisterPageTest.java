@@ -1,13 +1,17 @@
 package qaCoursesPage;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import qaCoursesTests.RegisterPage;
-import utils.CustomTestListener;
+import utils.AllureAttachmentListener;
 import webDriver.Driver;
 
-@Listeners({CustomTestListener.class})
+@Listeners({AllureAttachmentListener.class})
 public class RegisterPageTest {
     private static WebDriver driver;
     private RegisterPage registerPage;
@@ -25,6 +29,9 @@ public class RegisterPageTest {
     }
 
     @Test(priority = 4)
+    @Description("Positive test register with valid data")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Registration")
     public void registerWithValidData() {
         registerPage
                 .enterFirstNameValue("Vadim")
@@ -41,6 +48,9 @@ public class RegisterPageTest {
     }
 
     @Test(priority = 3)
+    @Description("Negative register test with invalid email")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Registration")
     public void registerWithInvalidEmailData() {
         registerPage
                 .enterFirstNameValue("Vadim")
@@ -59,6 +69,9 @@ public class RegisterPageTest {
     }
 
     @Test(priority = 2)
+    @Description("Negative register test with invalid password")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Registration")
     public void registerWithInvalidPasswordData() {
         registerPage
                 .enterFirstNameValue("Vadim")
@@ -77,6 +90,9 @@ public class RegisterPageTest {
     }
 
     @Test(priority = 1)
+    @Description("Negative register test with invalid confirm password")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Registration")
     public void registerWithInvalidConfirmPasswordData() {
         registerPage
                 .enterFirstNameValue("Vadim")

@@ -1,13 +1,17 @@
 package qaCoursesPage;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import qaCoursesTests.LoginPage;
-import utils.CustomTestListener;
+import utils.AllureAttachmentListener;
 import webDriver.Driver;
 
-@Listeners({CustomTestListener.class})
+@Listeners({AllureAttachmentListener.class})
 public class LoginPageTest {
     private static WebDriver driver;
     private LoginPage loginPage;
@@ -24,6 +28,9 @@ public class LoginPageTest {
     }
 
     @Test(priority = 5)
+    @Description("Positive test for login with valid data")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Login")
     public void loginWithValidData() {
         driver.get("https://qa-course-01.andersenlab.com/login");
         loginPage
@@ -35,6 +42,9 @@ public class LoginPageTest {
     }
 
     @Test(priority = 4)
+    @Description("Negative test for login with Invalid Password")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Login")
     public void loginWithInvalidPassword() {
         driver.get("https://qa-course-01.andersenlab.com/login");
         loginPage
@@ -47,6 +57,9 @@ public class LoginPageTest {
     }
 
     @Test(priority = 3)
+    @Description("Negative test with fields that were reversed")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Login")
     public void loginWithIncorrectFields() {
         driver.get("https://qa-course-01.andersenlab.com/login");
         loginPage
@@ -59,6 +72,9 @@ public class LoginPageTest {
     }
 
     @Test(priority = 2)
+    @Description("Negative test with empty email field")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Login")
     public void loginWithEmptyEmailField() {
         driver.get("https://qa-course-01.andersenlab.com/login");
         loginPage
@@ -70,6 +86,9 @@ public class LoginPageTest {
     }
 
     @Test(priority = 1)
+    @Description("Negative test with empty password field")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Login")
     public void loginWithEmptyPasswordField() {
         driver.get("https://qa-course-01.andersenlab.com/login");
         loginPage

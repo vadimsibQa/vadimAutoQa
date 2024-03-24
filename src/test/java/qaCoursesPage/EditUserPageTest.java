@@ -1,15 +1,19 @@
 package qaCoursesPage;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import qaCoursesTests.EditUserPage;
 import qaCoursesTests.LoginPage;
 import qaCoursesTests.MainPage;
-import utils.CustomTestListener;
+import utils.AllureAttachmentListener;
 import webDriver.Driver;
 
-@Listeners({CustomTestListener.class})
+@Listeners({AllureAttachmentListener.class})
 public class EditUserPageTest  {
     private static WebDriver driver;
     private LoginPage loginPage;
@@ -42,6 +46,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 6)
+    @Description("Return default values")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Edit Profile")
     public void returnDefaultValues() {
         mainPage
                 .clickEditProfile();
@@ -60,6 +67,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 5)
+    @Description("Positive test for edit personal info")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Edit Profile")
     public void editPersonalInfo() {
         mainPage
                 .clickEditProfile();
@@ -76,6 +86,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 4)
+    @Description("Positive test for edit personal info and password")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Edit Profile")
     public void editPersonalInfoAndPassword() {
         editUserPage
                 .enterFirstNameValue("Vadim03")
@@ -92,6 +105,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 3)
+    @Description("Negative test for edit personal info with empty first name")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Edit Profile")
     public void editPersonalInfoWithoutFirstName() {
         editUserPage
                 .enterFirstNameValue("")
@@ -106,6 +122,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 2)
+    @Description("Negative test for edit personal info with invalid password")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Edit Profile")
     public void editPersonalInfoWithInvalidPassword() {
         editUserPage
                 .enterFirstNameValue("Vadim03")
@@ -120,6 +139,9 @@ public class EditUserPageTest  {
     }
 
     @Test(priority = 1)
+    @Description("Negative test for edit personal info with invalid repeat password")
+    @Severity(SeverityLevel.NORMAL)
+    @Feature("Edit Profile")
     public void editPersonalInfoWithInvalidRepeatPassword() {
         mainPage
                 .clickEditProfile();

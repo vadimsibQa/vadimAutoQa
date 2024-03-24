@@ -4,9 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage {
     private WebDriver driver;
+
+    static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -33,11 +37,17 @@ public class LoginPage {
 
     public LoginPage enterEmailFieldValue(String value) {
         emailField.sendKeys(value);
+        logger.info("Enter email field value");
+        logger.info(emailField.toString());
+        logger.info(emailField.getText());
         return this;
     }
 
     public LoginPage enterPasswordFieldValue(String value) {
         passwordField.sendKeys(value);
+        logger.info("Enter password field value");
+        logger.info(passwordField.toString());
+        logger.info(passwordField.getText());
         return this;
     }
 
